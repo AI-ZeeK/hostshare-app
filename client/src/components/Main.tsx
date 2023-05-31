@@ -18,13 +18,13 @@ const Main = (props: Props) => {
   const router = useRouter();
   const handleSelectData = async (data: any) => {
     await dispatch(setMainData(data));
-    router.push(`/listing/${data.info.id}`);
+    router.push(`/listing/${data?.info?.id}`);
   };
   //   console.log(data[0]?.info.mainImage.url, typeof images);
   useEffect(() => {
     dispatch(getdata());
     dispatch(getimages());
-    setImageData(images.slice(0, 14));
+    setImageData(images?.slice(0, 14));
   }, []);
   return (
     <div className={`p-2 px-4 py-4 md:px-8 grid gap-4 grid-auto-fit`}>
@@ -75,20 +75,20 @@ const Main = (props: Props) => {
             <div className={`p-2 w-full flex flex-col gap-1`}>
               <div className={`flex justify-between items-center w-full`}>
                 <p className={`text-sm font-semibold `}>
-                  {dat.info.location.city}{" "}
+                  {dat.info?.location?.city}{" "}
                 </p>
                 <div className={`flex gap-2 items-center`}>
                   <BsStarFill />
 
-                  <p className={`text-sm  `}>{dat.info.ratings.accuracy} </p>
+                  <p className={`text-sm  `}>{dat.info?.ratings?.accuracy} </p>
                 </div>
               </div>
               <div className={`flex justify-start items-center w-full`}>
                 <div className={`flex items-center`}>
                   <p className={`text-sm font-semibold `}>
-                    {dat.info.currency.symbol}{" "}
+                    {dat.info?.currency?.symbol}{" "}
                   </p>
-                  <p className={`text-sm`}>{dat.info.price} </p>
+                  <p className={`text-sm`}>{dat?.info?.price} </p>
                 </div>
               </div>
             </div>

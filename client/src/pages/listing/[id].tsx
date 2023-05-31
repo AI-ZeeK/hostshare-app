@@ -25,7 +25,6 @@ export default function Home({post}: any) {
   //   });
   const router = useRouter();
   const {id} = router.query;
-  console.log(mainData);
 
   return (
     <div>

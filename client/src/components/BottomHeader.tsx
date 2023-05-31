@@ -19,12 +19,12 @@ const BottomHeader = ({data}: any) => {
       <div
         className={`flex flex-nowrap gap-8 overflow-x-scroll scrollbar-none`}
       >
-        {categories.map((category) => (
+        {categories?.map((category) => (
           <div
             className={`cursor-pointer text-gray-500 flex flex-col justify-center items-center gap-2 relative before:content-[''] before:absolute before:bottom-[-1px] before:left-0 before:w-full before:h-[2px] before:bg-gray-400 header-roll p-2 before:hidden hover:before:flex pb-5`}
           >
             <FaUmbrellaBeach className={`text-2xl`} />
-            <p className={`text-xs whitespace-nowrap  `}>{category.type}</p>
+            <p className={`text-xs whitespace-nowrap  `}>{category?.type}</p>
           </div>
         ))}
       </div>
