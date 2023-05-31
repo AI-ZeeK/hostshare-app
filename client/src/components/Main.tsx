@@ -28,7 +28,7 @@ const Main = (props: Props) => {
   }, []);
   return (
     <div className={`p-2 px-4 py-4 md:px-8 grid gap-4 grid-auto-fit`}>
-      {data.map((dat, i) => {
+      {data?.map((dat, i) => {
         return (
           <div
             key={i}
@@ -45,7 +45,7 @@ const Main = (props: Props) => {
                 //   onSlideChange={() => console.log("slide change")}
                 //   onSwiper={(swiper) => console.log(swiper)}
               >
-                {dat.info.images.data?.map((image: any, index: any) => (
+                {dat?.info?.images?.data?.map((image: any, index: any) => (
                   <div key={index}>
                     {}
                     <SwiperSlide
@@ -75,18 +75,18 @@ const Main = (props: Props) => {
             <div className={`p-2 w-full flex flex-col gap-1`}>
               <div className={`flex justify-between items-center w-full`}>
                 <p className={`text-sm font-semibold `}>
-                  {dat.info?.location?.city}{" "}
+                  {dat?.info?.location?.city}{" "}
                 </p>
                 <div className={`flex gap-2 items-center`}>
                   <BsStarFill />
 
-                  <p className={`text-sm  `}>{dat.info?.ratings?.accuracy} </p>
+                  <p className={`text-sm  `}>{dat?.info?.ratings?.accuracy} </p>
                 </div>
               </div>
               <div className={`flex justify-start items-center w-full`}>
                 <div className={`flex items-center`}>
                   <p className={`text-sm font-semibold `}>
-                    {dat.info?.currency?.symbol}{" "}
+                    {dat?.info?.currency?.symbol}{" "}
                   </p>
                   <p className={`text-sm`}>{dat?.info?.price} </p>
                 </div>

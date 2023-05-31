@@ -66,15 +66,15 @@ export default function Home({post}: any) {
           <div className={`hidden lg:flex flex-col gap-2 `}>
             <div className={``}>
               <p className={`text-2xl font-semibold`}>
-                {mainData.info?.title} !
+                {mainData?.info?.title} !
               </p>
             </div>
             <div
               className={`cursor-pointer text-sm flex justify-between items-center`}
             >
               <p className={`underline hover:no-underline transition-all`}>
-                {mainData.info?.location.city},{" "}
-                {mainData.info?.location.country.title}
+                {mainData?.info?.location?.city},{" "}
+                {mainData?.info?.location?.country?.title}
               </p>
               <div className={`flex justify-center items-center gap-4`}>
                 <div
@@ -96,7 +96,7 @@ export default function Home({post}: any) {
           <div
             className={`lg:grid grid-cols-[1fr_1fr] gap-2 rounded-3xl overflow-hidden hidden`}
           >
-            {mainData.info?.images.data
+            {mainData?.info?.images.data
               ?.slice(0, 1)
               .map((image: any, index: any) => (
                 <div className={`h-[24rem]`}>
@@ -116,7 +116,7 @@ export default function Home({post}: any) {
             <div
               className={`grid grid-cols-2 grid-rows-2 gap-2 w-[100%] h-[24rem]`}
             >
-              {mainData.info?.images.data
+              {mainData?.info?.images.data
                 ?.slice(1, 5)
                 .map((image: any, index: any) => (
                   <div key={index}>
@@ -147,7 +147,7 @@ export default function Home({post}: any) {
               //   onSlideChange={() => console.log("slide change")}
               //   onSwiper={(swiper) => console.log(swiper)}
             >
-              {mainData.info.images.data.map((image: any, index: any) => (
+              {mainData?.info?.images?.data.map((image: any, index: any) => (
                 <div key={index * 3}>
                   {}
                   <SwiperSlide
@@ -184,8 +184,8 @@ export default function Home({post}: any) {
               className={`cursor-pointer text-sm flex justify-between items-center`}
             >
               <p className={`underline hover:no-underline transition-all`}>
-                {mainData.info.location.city},{" "}
-                {mainData.info.location.country.title}
+                {mainData?.info?.location?.city},{" "}
+                {mainData?.info?.location?.country?.title}
               </p>
               <div className={`flex justify-center items-center gap-4`}></div>
             </div>
@@ -211,7 +211,7 @@ export default function Home({post}: any) {
                 className={`cursor-pointer text-sm flex justify-between items-center`}
               >
                 <div className={`flex justify-between items-center gap-1`}>
-                  {mainData.info?.details.data.map((detail: any) => (
+                  {mainData?.info?.details.data.map((detail: any) => (
                     <p>
                       {detail?.value} {detail?.type} &bull;
                     </p>
@@ -236,8 +236,8 @@ export default function Home({post}: any) {
           <p
             className={`text-sm font-semibold flex items-center justify-center `}
           >
-            <span>{mainData.info?.currency.symbol}</span>
-            <span>{mainData.info?.price}</span>
+            <span>{mainData?.info?.currency.symbol}</span>
+            <span>{mainData?.info?.price}</span>
           </p>
           <p className={`text-sm font-thin`}>night </p>
         </div>

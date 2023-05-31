@@ -39,9 +39,7 @@ const WeekSearch = (props: Props) => {
     // setSearchValue(e.target.value);
     // console.log(e.target.name, searchValue);
   };
-  const handleSelect = (date: any) => {
-    console.log(date); // native Date object
-  };
+  const handleSelect = (date: any) => {};
   const handleSubmit = () => {
     // Perform any actions with the search value
     console.log("Search value:", searchValue);
@@ -124,11 +122,11 @@ const WeekSearch = (props: Props) => {
         {openCal2 && <Calendar date={new Date()} onChange={handleSelect} />}
         {openPicker && (
           <div className={`border rounded-lg p-8 flex flex-col w-full gap-3`}>
-            {pickData.map((pick) => (
-              <Fragment key={pick.id}>
+            {pickData?.map((pick) => (
+              <Fragment key={pick?.id}>
                 <div className={`flex justify-between gap-16 items-center`}>
                   <div className={`flex flex-col justify-center items-start `}>
-                    <p className={`font-semibold text-md `}>{pick.head} </p>
+                    <p className={`font-semibold text-md `}>{pick?.head} </p>
                     <p className={`font-thin text-xs`}>{pick?.agerange} </p>
                     <p className={`font-thin text-xs underline`}>
                       {pick?.link}{" "}
@@ -137,19 +135,19 @@ const WeekSearch = (props: Props) => {
                   <div className={`flex gap-4 justify-center items-center`}>
                     <div
                       onClick={() =>
-                        pick.count !== 0
+                        pick?.count !== 0
                           ? dispatch(removePickCount(pick))
                           : false
                       }
                       className={`p-2 border  ${
-                        pick.count === 0
+                        pick?.count === 0
                           ? "text-gray-500 border-gray-500"
                           : "border-gray-800"
                       } cursor-pointer rounded-full w-8 h-8 flex justify-center items-center `}
                     >
                       <AiOutlineMinus />
                     </div>
-                    <div>{pick.count} </div>
+                    <div>{pick?.count} </div>
                     <div
                       onClick={() => dispatch(addPickCount(pick))}
                       className={`p-2 cursor-pointer rounded-full w-8 h-8 flex justify-center items-center border border-gray-800`}
